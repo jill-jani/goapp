@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../static/css/materialize.css">
+        <link href='https://fonts.googleapis.com/css?family=Rosario:400' rel='stylesheet' type='text/css'>
+        <title>Check Weather</title>
+    </head>
+    <body>
+        <h1 class="center-align"> Check Weather </h1>
+    <nav>
+          <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/Weather">WEATHER</a></li>
+                <li><a href="/NumVerify">VERIFY NUMBER</a></li>
+          </ul>
+        </nav>
+        <br><br>
+    <div class="container" class="center-align">
+        <form method="POST" action="/WeatherInfo">
+            <div class="form">
+
+                <label for="n">Enter a City: </label> <br>
+                <input type="text" name="city" id="n" required="required" placeholder="London" autocomplete="off">
+
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="center-align">
+        <p> City Name: {{ .Name }} </p>
+        <p> Temperature : {{ .MainValues.Temp }} </p>
+        <p> Pressure : {{ .MainValues.Pressure }} </p>
+        <p> Humidity : {{ .MainValues.Humidity }}</p>
+        <p> Maximum Temperature : {{ .MainValues.Temp_max }}</p>
+        <p> Minimum Temperature : {{ .MainValues.Temp_min }}</p>
+    </div>
+    </body>
+</html>

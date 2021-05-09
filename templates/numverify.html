@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../static/css/materialize.css">
+        <link href='https://fonts.googleapis.com/css?family=Rosario:400' rel='stylesheet' type='text/css'>
+        <title>Verify Phone Number</title>
+    </head>
+    <body>
+        <h1 class="center-align"> Verify Phone Number </h1>
+    <nav>
+          <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/Weather">WEATHER</a></li>
+                <li><a href="/NumVerify">VERIFY NUMBER</a></li>
+          </ul>
+        </nav>
+        <br><br>
+        <div class="center-align">
+            <img src="../static/img/World-Calling-Codes-Map.jpg" alt="World-Calling-Codes-Map" >
+          </div>
+        <br><br>
+    <div class="container" class="center-align">
+        <form method="POST" action="/NumInfo">
+            <div class="form">
+
+                <label for="n">Enter a Phone number to verify: </label> <br>
+                <input type="text" name="num" id="n" required="required" placeholder="+91 99999 99999" autocomplete="off">
+
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="center-align">
+        <p> Phone number: {{ .Number }} </p>
+        <p> Validity: {{ .Valid }} </p>
+        <p> Local Format: {{ .LocalFormat }} </p>
+        <p> International Format: {{ .InternationalFormat }} </p>
+        <p> Country Prefix: {{ .CountryPrefix }}</p>
+        <p> Country Code: {{ .CountryCode }}</p>
+        <p> Country Name: {{ .CountryName }} </p>
+        <p> Carrier: {{ .Carrier }}</p>        
+        <p> Location: {{ .Location }} </p>
+        <p> Line Type: {{ .LineType }} </p>
+    </div>
+    </body>
+</html>
